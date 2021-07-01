@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Class</h1>
+        <script>           
+            class Human{
+                constructor(type = 'Human'){
+                    this.type = type;
+                }
+                static isHuman(human){
+                    return human instanceof Human;
+                }
+                breath(){
+                    alert('Ha');
+                }
+            }
+
+            class Zero extends Human{
+                constructor(type, firstName, lastName){
+                    super(type);
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                }
+
+                sayName() {
+                    super.breath();
+                    alert(`${this.firstName} ${this.lastName}`)
+                }
+            }
+
+            const newZero = new Zero('Human', 'Park', 'Sinyoung');
+            newZero.sayName();
+            
+            
+
+           
+        </script>
+    </body>
+</html>

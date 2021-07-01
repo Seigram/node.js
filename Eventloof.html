@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>PSY Playground</h1>
+        <script>           
+           function first(){
+               second();
+               console.log("1");
+           }
+
+           function second(){
+               third();
+               console.log("2");
+           }
+
+           function third(){
+               console.log("3")
+           } 
+
+           function run(){
+               console.log("3초후 실행");
+           }
+           
+           console.log("시작");
+           //setTimeount(run,3000);
+           console.log("끝");
+
+           var won = 1000;
+           var result = '이 과자는 $(won)원 입니다'; //$는 함수 호출기능도 있음
+           function a() {}
+           a();
+           a``;// 이방법도 있음
+
+           //객체표현방식
+
+           var sayNode = function(){
+             console.log("Node");  
+           };
+
+           var es = 'ES';
+           var oldObject = {
+               sayJS : function(){
+                   console.log('JS');
+               },
+               sayNode: sayNode,
+           };
+           oldObject[es+6] = 'Fantastic';//동적속성 변수값을 속성으로 만듬 ES6 : Fantastic과 같다
+           oldObject.sayNode();
+           oldObject.sayJS();
+           console.log(oldObject.ES6);
+
+           const newObject = {
+            sayJS(){
+                console.log('JS');
+            },//function을 없앰 더 간결해짐
+            sayNode,
+            [es+6]: 'Fnatastic',//아에 객체안에다가 만들수 있도록 바뀜
+           };
+
+           //람다식
+
+           function add1(x,y){
+               return x+y;
+           }
+
+           const add2 = (x,y) =>{return x+y};
+           const add3 = (x,y) => x+y;
+           const add4 = (x,y) => (x+y);
+
+           function not1(x){
+               return !x;
+           }
+           
+           const not2 = x => !x;
+
+           const obj = (x,y) => ({x,y})//객체리턴의경우 소괄호가 필수임
+           var realationship1 = {
+                name: 'zero',
+                friend: ['nero', 'hero', 'xero'],
+                logFriends: function () {
+                    var that = this; //부모의 this를 가져옴 
+                    this.friend.forEach(function(friend){
+                        console.log(that.name, friend);//부모 this 내 this랑 같게 만듬 
+                    });
+                }
+           }
+
+           //this 쓸거면 fuction을 쓰고
+           //this 필요없으면 화살표 왠만하면 this 쓰지말라
+           const realationship12 = {
+               name: 'zero',
+               friend: ['nero', 'hero', 'xero'],
+               logFriends(){
+                   this.friend.forEach(friend=>{
+                    console.log(this.name, friend);//무조건 부모쪽을 가져옴
+                   });
+               }
+               
+           }
+
+        const example = {a : 123, b: {c: 135, d:146}}
+        const A = example.a;
+        const B = example.b.d;
+
+
+        const {g, b:{d,e}} = example;//분해해서 역으로 할당 단, this는 구조분해 할당 안함
+    
+
+        
+       
+      
+       
+           
+        </script>na
+    </body>
+</html>
